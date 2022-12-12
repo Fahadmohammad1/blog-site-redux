@@ -15,39 +15,9 @@ const Navbar = () => {
             <ul class="hidden md:flex flex-auto space-x-2">
               <li
                 onclick="selected()"
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-              >
-                Collections
-              </li>
-              <li
-                onclick="selected()"
                 class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
               >
-                Arts
-              </li>
-              <li
-                onclick="selected()"
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-              >
-                Space
-              </li>
-              <li
-                onclick="selected()"
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-              >
-                Game
-              </li>
-              <li
-                onclick="selected()"
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-              >
-                Utility
-              </li>
-              <li
-                onclick="selected()"
-                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded"
-              >
-                Cards
+                History
               </li>
             </ul>
           </nav>
