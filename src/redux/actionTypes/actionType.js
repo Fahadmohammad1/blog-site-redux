@@ -1,1 +1,1 @@
-export const LOAD_BLOG = "LOAD_BLOG";
+export const GET_CONTENT = "GET_CONTENT";

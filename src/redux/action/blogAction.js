@@ -1,8 +1,8 @@
-import { LOAD_BLOG } from "../actionTypes/actionType";
+import { GET_CONTENT } from "../actionTypes/actionType";
 
 export const loadBlog = (blogs) => {
   return {
-    type: LOAD_BLOG,
+    type: GET_CONTENT,
     payload: blogs,
   };
 };
