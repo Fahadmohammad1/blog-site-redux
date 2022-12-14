@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import loadBlogData from "../redux/thunk/blogs/fetchBlogs";
+import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 
 const { Meta } = Card;
 
