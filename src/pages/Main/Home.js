@@ -24,24 +24,26 @@ const Home = () => {
           <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-xl">
             <img
               class="lg:h-72 md:h-36 w-full object-cover object-center"
-              src="https://firebasestorage.googleapis.com/v0/b/thecaffeinecode.appspot.com/o/blog.jpg?alt=media&token=271cb624-94d4-468d-a14d-455377ba75c2"
+              src={blog.image}
               alt="blog cover"
             />
 
             <div class="p-4">
               <div className="mb-1">
                 {blog.tags.map((tag) => (
-                  <button class="bg-gray-200 tracking-widest text-xs font-bold text-violet-500  mr-2 uppercase rounded-full shadow-xl p-1.5 hover:bg-teal-300 hover:text-black">
+                  <button class="bg-gray-200 tracking-widest text-xs font-medium text-violet-500  mr-2 uppercase rounded-full shadow-xl p-1.5 hover:bg-teal-300 hover:text-black">
                     {tag}
                   </button>
                 ))}
               </div>
-              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+              <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
                 {blog.title}
               </h1>
               <div class="flex items-center flex-wrap ">
                 <p class="text-green-800  md:mb-2 lg:mb-0">
-                  <p class="inline-flex items-center">{blog.description}</p>
+                  <p class="inline-flex items-center">
+                    {blog.description.slice(0, 150)}...
+                  </p>
                 </p>
               </div>
             </div>
