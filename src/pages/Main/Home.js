@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
-// import {
-//   EditOutlined,
-//   EllipsisOutlined,
-//   SettingOutlined,
-// } from "@ant-design/icons";
-// import { Avatar, Card } from "antd";
+
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
-
-// const { Meta } = Card;
 
 const Home = () => {
   const dispatch = useDispatch();
