@@ -1,5 +1,5 @@
 import React from "react";
-import { Space, Table } from "antd";
+import { Button, Space, Table } from "antd";
 
 const AllBlog = () => {
   const columns = [
@@ -24,9 +24,11 @@ const AllBlog = () => {
       title: "Action",
       key: "action",
       render: (_, record) => (
-        <Space size="middle">
-          <a href="/">Update</a>
-          <a href="/">Delete</a>
+        <Space size="small">
+          <Button type="default">Update</Button>
+          <Button type="primary" danger ghost>
+            Delete
+          </Button>
         </Space>
       ),
     },
