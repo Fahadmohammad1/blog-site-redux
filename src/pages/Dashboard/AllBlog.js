@@ -1,50 +1,31 @@
 import React from "react";
-import { Space, Table, Tag } from "antd";
+import { Space, Table } from "antd";
 
 const AllBlog = () => {
   const columns = [
     {
-      title: "Name",
+      title: "Author Name",
       dataIndex: "name",
       key: "name",
       render: (text) => <a href="/">{text}</a>,
     },
     {
-      title: "Age",
-      dataIndex: "age",
-      key: "age",
-    },
-    {
-      title: "Address",
+      title: "Blog Title",
       dataIndex: "address",
       key: "address",
     },
     {
-      title: "Tags",
-      key: "tags",
-      dataIndex: "tags",
-      render: (_, { tags }) => (
-        <>
-          {tags.map((tag) => {
-            let color = tag.length > 5 ? "geekblue" : "green";
-            if (tag === "loser") {
-              color = "volcano";
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
-      ),
+      title: "Date & Time",
+      dataIndex: "address",
+      key: "address",
     },
+
     {
       title: "Action",
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <a href="/">Invite {record.name}</a>
+          <a href="/">Update</a>
           <a href="/">Delete</a>
         </Space>
       ),
