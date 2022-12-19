@@ -15,6 +15,21 @@ const Home = () => {
       {blogs?.map((blog) => (
         <div class="p-4">
           <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-xl">
+            <div class="w-full">
+              <div class="w-full flex p-2">
+                <div class="p-2 ">
+                  <img
+                    src={blog.authorPic}
+                    alt="author"
+                    class="w-10 h-10 rounded-full overflow-hidden"
+                  />
+                </div>
+                <div class="pl-2 pt-2 ">
+                  <p class="font-bold">{blog.authorName}</p>
+                  <p class="text-xs">2 June 2022</p>
+                </div>
+              </div>
+            </div>
             <img
               class="lg:h-72 md:h-36 w-full object-cover object-center"
               src={blog.image}

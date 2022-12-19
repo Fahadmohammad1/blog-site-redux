@@ -21,6 +21,11 @@ const Navbar = () => {
                   History
                 </li>
               </Link>
+              <Link to="/dashboard">
+                <li class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-black border border-white bg-gray-200 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">
+                  Dashboard
+                </li>
+              </Link>
             </ul>
           </nav>
         </div>
