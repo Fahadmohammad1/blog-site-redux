@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../layout/Dashboard/Dashboard";
 import Main from "../layout/Main/Main";
+import AddBlog from "../pages/Dashboard/AddBlog";
 import AllBlog from "../pages/Dashboard/AllBlog";
 
 import History from "../pages/History/History";
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
           {
             path: "/dashboard",
             element: <AllBlog />,
+          },
+          {
+            path: "/dashboard/add-blog",
+            element: <AddBlog />,
           },
         ],
       },
