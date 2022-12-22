@@ -26,7 +26,9 @@ const Home = () => {
                 </div>
                 <div class="pl-2 pt-2 ">
                   <p class="font-bold">{blog.authorName}</p>
-                  <p class="text-xs">2 June 2022</p>
+                  <p class="text-xs">
+                    {blog.date} - {blog.time}
+                  </p>
                 </div>
               </div>
             </div>
