@@ -2,22 +2,17 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const AddBlog = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const date = new Date().toDateString();
+  const time = new Date().toLocaleTimeString();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     reset();
     console.log(data);
   };
 
-  const date = new Date();
-
   return (
     <div>
-      <div class="flex items-center justify-center p-12">
+      <div class="flex items-center justify-center px-12 pb-12 pt-5">
         <div class="mx-auto w-full max-w-[550px]">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div class="mb-4">
@@ -36,6 +31,24 @@ const AddBlog = () => {
                 placeholder="Blog Title"
                 class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
+            </div>
+            <div class="mb-4 hidden">
+              <label
+                for="date"
+                class="mb-2 block text-base font-medium text-[#07074D]"
+              >
+                Date
+              </label>
+              <input {...register("date")} value={date} name="date" id="date" />
+            </div>
+            <div class="mb-4 hidden">
+              <label
+                for="time"
+                class="mb-2 block text-base font-medium text-[#07074D]"
+              >
+                Time
+              </label>
+              <input {...register("time")} value={time} name="time" id="time" />
             </div>
             <div class="mb-4">
               <label
