@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className="col-span-2 bg-gray-300 shadow-lg h-screen p-5 rounded-lg">
       <ul className="flex gap-3  flex-col h-full">
-        <li className="font-bold uppercase">Admin Dashboard</li>
+        <li className="font-bold uppercase text-center">Admin Dashboard</li>
         <li className="border-2 text-center rounded">
           <Link to="/dashboard">All Blog</Link>
         </li>
