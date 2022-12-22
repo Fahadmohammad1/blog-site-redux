@@ -17,12 +17,15 @@ const AllBlog = () => {
       title: "Author Name",
       dataIndex: "authorName",
       key: "authorName",
-      render: (authorName) => <a href="/">{authorName}</a>,
+      render: (authorName) => <span>{authorName}</span>,
     },
     {
       title: "Blog Title",
       dataIndex: "title",
       key: "title",
+      render: (title) => (
+        <span className="text-ellipsis text-justify">{title}</span>
+      ),
     },
     {
       title: "Date & Time",
