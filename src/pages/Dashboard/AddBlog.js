@@ -29,7 +29,7 @@ const AddBlog = () => {
                 id="title"
                 required
                 placeholder="Blog Title"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
             <div class="mb-4 hidden">
@@ -64,7 +64,7 @@ const AddBlog = () => {
                 id="authorName"
                 required
                 placeholder="Mr Andrew Tate"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
             <div class="mb-4">
@@ -81,7 +81,7 @@ const AddBlog = () => {
                 id="tags"
                 required
                 placeholder="Programming, Web development, Javascript"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
             <div class="mb-4">
@@ -98,8 +98,25 @@ const AddBlog = () => {
                 id="description"
                 required
                 placeholder="Write details here"
-                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               ></textarea>
+            </div>
+            <div class="mb-4">
+              <label
+                for="image"
+                class="mb-2 block text-base font-medium text-[#07074D]"
+              >
+                Image (demo image of content)
+              </label>
+              <input
+                {...register("image")}
+                type="file"
+                name="image"
+                id="image"
+                required
+                placeholder="Add a demo image of your content"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
             </div>
             <div>
               <input
