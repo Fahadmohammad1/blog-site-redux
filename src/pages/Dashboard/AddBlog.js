@@ -1,13 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import postBlogData from "../../redux/thunk/blogs/postBlog";
 
 const AddBlog = () => {
   const date = new Date().toDateString();
   const time = new Date().toLocaleTimeString();
+  const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (data) => {
+  const onSubmit = (blog) => {
     reset();
-    console.log(data);
+
+    dispatch(postBlogData(blog));
+    console.log(blog);
   };
 
   return (
