@@ -106,11 +106,11 @@ const AddBlog = () => {
                 for="image"
                 class="mb-2 block text-base font-medium text-[#07074D]"
               >
-                Image (demo image of content)
+                Image Link
               </label>
               <input
                 {...register("image")}
-                type="file"
+                type="link"
                 name="image"
                 id="image"
                 required
