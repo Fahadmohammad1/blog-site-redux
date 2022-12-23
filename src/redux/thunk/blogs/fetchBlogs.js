@@ -2,10 +2,10 @@ import { loadBlog } from "../../action/blogAction";
 
 const loadBlogData = () => {
   return async (dispatch, getState) => {
-    const res = await fetch("blog.json");
+    const res = await fetch("https://moon-tech-server-tau.vercel.app/blogs");
     const data = await res.json();
 
-    if (data.length) {
+    if (data.data.length) {
       dispatch(loadBlog(data));
     }
   };

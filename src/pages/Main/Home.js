@@ -5,7 +5,7 @@ import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const blogs = useSelector((state) => state.blogs[0]);
+  const blogs = useSelector((state) => state?.blogs[0]?.data);
 
   useEffect(() => {
     dispatch(loadBlogData());
@@ -19,7 +19,7 @@ const Home = () => {
               <div class="w-full flex p-2">
                 <div class="p-2 ">
                   <img
-                    src={blog.authorPic}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQ-YHX2i3RvTDDmpfnde4qyb2P8up7Wi3Ww&usqp=CAU"
                     alt="author"
                     class="w-10 h-10 rounded-full overflow-hidden"
                   />
