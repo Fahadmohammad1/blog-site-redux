@@ -6,6 +6,7 @@ import AllBlog from "../pages/Dashboard/AllBlog";
 
 import History from "../pages/History/History";
 import Home from "../pages/Main/Home";
+import UserPost from "../pages/UserPost/UserPost";
 
 const routes = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const routes = createBrowserRouter([
       {
         path: "/history",
         element: <History />,
+      },
+      {
+        path: "/user-post",
+        element: <UserPost />,
       },
       {
         path: "/dashboard",

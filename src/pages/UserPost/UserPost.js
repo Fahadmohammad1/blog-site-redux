@@ -1,19 +1,16 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import postBlogData from "../../redux/thunk/blogs/postBlog";
 
-const AddBlog = () => {
+const UserPost = () => {
   const date = new Date().toDateString();
   const time = new Date().toLocaleTimeString();
   const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
+
   const onSubmit = (blog) => {
     reset();
-
-    dispatch(postBlogData(blog));
   };
-
   return (
     <div>
       <div class="flex items-center justify-center px-12 pb-12 pt-5">
@@ -136,4 +133,4 @@ const AddBlog = () => {
   );
 };
 
-export default AddBlog;
+export default UserPost;
