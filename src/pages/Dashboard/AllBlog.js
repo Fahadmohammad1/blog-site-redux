@@ -37,11 +37,11 @@ const AllBlog = () => {
     {
       title: "Action",
       key: "action",
-      render: (_, record) => (
+      render: (_, blog) => (
         <Space size="small">
           <Button type="default">Update</Button>
           <Button
-            onClick={() => deleteBlog(record._id)}
+            onClick={() => dispatch(deleteBlog(blog._id))}
             type="default"
             danger
             ghost

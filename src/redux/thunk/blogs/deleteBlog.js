@@ -12,6 +12,7 @@ const deleteBlog = (id) => {
       }
     );
     const data = res.json();
+    console.log(data);
 
     if (data.acknowledged) {
       dispatch(removeBlog(id));
