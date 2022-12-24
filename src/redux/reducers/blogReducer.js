@@ -21,9 +21,9 @@ const blogReducer = (state = initialState, action) => {
         blogs: [...state.blogs, action.payload],
       };
     case DELETE_CONTENT:
-      console.log(state);
       return {
         ...state,
+        blogs: state.blogs.filter((blog) => blog._id !== action.payload),
       };
 
     default:

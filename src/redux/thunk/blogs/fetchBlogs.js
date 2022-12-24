@@ -6,7 +6,7 @@ const loadBlogData = () => {
     const data = await res.json();
 
     if (data.data.length) {
-      dispatch(loadBlog(data));
+      dispatch(loadBlog(data.data));
     }
   };
 };
