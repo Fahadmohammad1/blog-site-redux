@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+import { FaEdit } from "react-icons/fa";
 
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
@@ -29,6 +31,13 @@ const Home = () => {
                   <p class="text-xs">
                     {blog.date} - {blog.time}
                   </p>
+                </div>
+                <div className="ml-auto flex items-center">
+                  <FaEdit title="Edit" className="text-2xl text-cyan-500" />
+                  <RiDeleteBin5Fill
+                    title="Delete"
+                    className="text-2xl ml-2 text-red-600"
+                  />
                 </div>
               </div>
             </div>
