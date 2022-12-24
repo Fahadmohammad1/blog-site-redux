@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Space, Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
+import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 
 const AllBlog = () => {
   const dispatch = useDispatch();
@@ -39,13 +40,19 @@ const AllBlog = () => {
       render: (_, record) => (
         <Space size="small">
           <Button type="default">Update</Button>
-          <Button type="default" danger ghost>
+          <Button
+            onClick={() => deleteBlog(record._id)}
+            type="default"
+            danger
+            ghost
+          >
             Delete
           </Button>
         </Space>
       ),
     },
   ];
+
   return (
     <div>
       <Table columns={columns} dataSource={blogs} />
