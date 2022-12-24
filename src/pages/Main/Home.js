@@ -4,10 +4,18 @@ import { FaEdit } from "react-icons/fa";
 
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
+import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 
 const Home = () => {
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state?.blogs);
+
+  const deleteBlogByUser = (id) => {
+    alert("Are you sure?");
+    if (alert) {
+      dispatch(deleteBlog(id));
+    }
+  };
 
   useEffect(() => {
     dispatch(loadBlogData());
@@ -33,10 +41,14 @@ const Home = () => {
                   </p>
                 </div>
                 <div className="ml-auto flex items-center">
-                  <FaEdit title="Edit" className="text-2xl text-cyan-500" />
+                  <FaEdit
+                    title="Edit"
+                    className="text-2xl text-cyan-500 cursor-pointer"
+                  />
                   <RiDeleteBin5Fill
+                    onClick={() => deleteBlogByUser(blog._id)}
                     title="Delete"
-                    className="text-2xl ml-2 text-red-600"
+                    className="text-2xl ml-2 text-red-600 cursor-pointer"
                   />
                 </div>
               </div>

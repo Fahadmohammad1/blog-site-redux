@@ -29,7 +29,7 @@ const Navbar = () => {
                 </li>
               </Link>
             </ul>
-            {pathname !== "/dashboard" && (
+            {pathname === "/" && (
               <Link to="/user-post">
                 <span class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-black border border-black bg-cyan-400 cursor-pointer px-3 py-2.5 text-xs leading-3 shadow-md rounded flex flex-auto space-x-2 font-bold">
                   POST
