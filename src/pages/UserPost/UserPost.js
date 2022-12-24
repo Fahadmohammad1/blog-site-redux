@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import postBlogData from "../../redux/thunk/blogs/postBlog";
 
 const UserPost = () => {
   const date = new Date().toDateString();
@@ -10,6 +11,7 @@ const UserPost = () => {
 
   const onSubmit = (blog) => {
     reset();
+    dispatch(postBlogData(blog));
   };
   return (
     <div>
