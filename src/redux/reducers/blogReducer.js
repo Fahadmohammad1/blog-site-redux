@@ -13,7 +13,7 @@ const blogReducer = (state = initialState, action) => {
     case GET_CONTENT:
       return {
         ...state,
-        blogs: [...state.blogs, action.payload],
+        blogs: action.payload,
       };
     case ADD_CONTENT:
       return {
@@ -21,9 +21,9 @@ const blogReducer = (state = initialState, action) => {
         blogs: [...state.blogs, action.payload],
       };
     case DELETE_CONTENT:
+      console.log(state);
       return {
         ...state,
-        blogs: state.blogs.filter((blog) => blog._id !== action.payload),
       };
 
     default:

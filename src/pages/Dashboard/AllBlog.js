@@ -6,7 +6,7 @@ import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 
 const AllBlog = () => {
   const dispatch = useDispatch();
-  const blogs = useSelector((state) => state?.blogs[0]?.data);
+  const blogs = useSelector((state) => state?.blogs?.data);
   console.log(blogs);
 
   useEffect(() => {

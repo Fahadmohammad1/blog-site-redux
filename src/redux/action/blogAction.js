@@ -17,9 +17,9 @@ export const addBlog = (blog) => {
     payload: blog,
   };
 };
-export const removeBlog = (blog) => {
+export const removeBlog = (id) => {
   return {
     type: DELETE_CONTENT,
-    payload: blog._id,
+    payload: id,
   };
 };
