@@ -3,11 +3,12 @@ import { Button, Space, Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
+import { useNavigate } from "react-router-dom";
 
 const AllBlog = () => {
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state?.blogs);
-
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(loadBlogData());
   }, [dispatch]);
@@ -38,7 +39,12 @@ const AllBlog = () => {
       key: "action",
       render: (_, blog) => (
         <Space size="small">
-          <Button type="default">Update</Button>
+          <Button
+            onClick={() => navigate(`/edit-blog/${blog._id}`)}
+            type="default"
+          >
+            Update
+          </Button>
           <Button
             onClick={() => dispatch(deleteBlog(blog._id))}
             type="default"

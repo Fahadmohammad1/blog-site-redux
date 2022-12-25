@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -136,7 +135,7 @@ const EditBlog = () => {
             </div>
             <div>
               <input
-                value="POST"
+                value="UPDATE"
                 type="submit"
                 className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none w-full text-center"
               />
