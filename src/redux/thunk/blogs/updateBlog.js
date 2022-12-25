@@ -1,7 +1,7 @@
-const updateBlog = (blog) => {
+const updateBlog = (blog, id) => {
   return async (dispatch, getState) => {
-    const res = fetch(
-      `https://moon-tech-server-tau.vercel.app/blog/${blog._id}`,
+    const res = await fetch(
+      `https://moon-tech-server-tau.vercel.app/blog/${id}`,
       {
         method: "PATCH",
         headers: {
@@ -10,7 +10,7 @@ const updateBlog = (blog) => {
         body: JSON.stringify(blog),
       }
     );
-    const data = res.json();
+    const data = await res.json();
     console.log(data);
   };
 };
