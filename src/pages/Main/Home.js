@@ -45,7 +45,7 @@ const Home = () => {
                 </div>
                 <div className="ml-auto flex items-center">
                   <FaEdit
-                    onClick={() => navigate("/edit-blog")}
+                    onClick={() => navigate(`/edit-blog/${blog._id}`)}
                     title="Edit"
                     className="text-2xl text-cyan-500 cursor-pointer"
                   />

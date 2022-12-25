@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
         element: <UserPost />,
       },
       {
-        path: "/edit-blog",
+        path: "/edit-blog/:id",
         element: <EditBlog />,
       },
       {
