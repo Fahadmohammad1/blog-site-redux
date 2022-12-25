@@ -3,6 +3,7 @@ import Dashboard from "../layout/Dashboard/Dashboard";
 import Main from "../layout/Main/Main";
 import AddBlog from "../pages/Dashboard/AddBlog";
 import AllBlog from "../pages/Dashboard/AllBlog";
+import EditBlog from "../pages/EditBlog/EditBlog";
 
 import History from "../pages/History/History";
 import Home from "../pages/Main/Home";
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
       {
         path: "/user-post",
         element: <UserPost />,
+      },
+      {
+        path: "/edit-blog",
+        element: <EditBlog />,
       },
       {
         path: "/dashboard",

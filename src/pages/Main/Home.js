@@ -5,6 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const Home = () => {
       dispatch(deleteBlog(id));
     }
   };
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(loadBlogData());
@@ -42,6 +45,7 @@ const Home = () => {
                 </div>
                 <div className="ml-auto flex items-center">
                   <FaEdit
+                    onClick={() => navigate("/edit-blog")}
                     title="Edit"
                     className="text-2xl text-cyan-500 cursor-pointer"
                   />
