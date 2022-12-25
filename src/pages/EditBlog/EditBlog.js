@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,8 @@ const EditBlog = () => {
   const { id } = useParams();
 
   const blogs = useSelector((state) => state?.blogs);
-  const blog = blogs.find((blog) => blog._id === id);
+
+  const blog = blogs?.find((blog) => blog._id === id);
 
   const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();

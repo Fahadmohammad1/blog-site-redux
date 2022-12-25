@@ -1,3 +1,5 @@
+import { editBlog } from "../../action/blogAction";
+
 const updateBlog = (blog, id) => {
   return async (dispatch, getState) => {
     const res = await fetch(
@@ -12,6 +14,15 @@ const updateBlog = (blog, id) => {
     );
     const data = await res.json();
     console.log(data);
+
+    if (data.modifiedCount > 0) {
+      dispatch(
+        editBlog({
+          _id: id,
+          ...blog,
+        })
+      );
+    }
   };
 };
 

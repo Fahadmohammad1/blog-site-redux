@@ -2,6 +2,7 @@ import {
   ADD_CONTENT,
   DELETE_CONTENT,
   GET_CONTENT,
+  UPDATE_CONTENT,
 } from "../actionTypes/actionType";
 
 const initialState = {
@@ -24,6 +25,12 @@ const blogReducer = (state = initialState, action) => {
       return {
         ...state,
         blogs: state.blogs.filter((blog) => blog._id !== action.payload),
+      };
+    case UPDATE_CONTENT:
+      console.log(action.payload);
+      return {
+        ...state,
+        blogs: Object.assign(state.blogs, action.payload),
       };
 
     default:
