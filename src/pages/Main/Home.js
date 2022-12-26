@@ -30,7 +30,7 @@ const Home = () => {
           <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-xl">
             <div class="w-full">
               <div class="w-full flex p-2">
-                <div class="p-2 ">
+                <div class="p-2">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQ-YHX2i3RvTDDmpfnde4qyb2P8up7Wi3Ww&usqp=CAU"
                     alt="author"
@@ -74,7 +74,10 @@ const Home = () => {
               <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
                 {blog.title}
               </h1>
-              <div class="flex items-center flex-wrap ">
+              <div
+                class="flex items-center flex-wrap cursor-pointer"
+                onClick={() => navigate(`/blog/${blog._id}`)}
+              >
                 <p class="text-green-800  md:mb-2 lg:mb-0">
                   <p class="inline-flex items-center">
                     {blog.description.slice(0, 150)}...
