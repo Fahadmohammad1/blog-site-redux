@@ -1,5 +1,6 @@
 import {
   ADD_CONTENT,
+  ADD_TO_HISTORY,
   DELETE_CONTENT,
   GET_CONTENT,
   UPDATE_CONTENT,
@@ -7,6 +8,7 @@ import {
 
 const initialState = {
   blogs: [],
+  history: [],
 };
 
 const blogReducer = (state = initialState, action) => {
@@ -27,10 +29,14 @@ const blogReducer = (state = initialState, action) => {
         blogs: state.blogs.filter((blog) => blog._id !== action.payload),
       };
     case UPDATE_CONTENT:
-      console.log(action.payload);
       return {
         ...state,
         blogs: Object.assign(state.blogs, action.payload),
+      };
+    case ADD_TO_HISTORY:
+      return {
+        ...state,
+        history: [state.history, action.payload],
       };
 
     default:
