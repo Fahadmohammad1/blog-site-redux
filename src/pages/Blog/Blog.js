@@ -20,7 +20,7 @@ const Blog = () => {
         <div
           class="absolute left-0 bottom-0 w-full h-full z-10"
           style={{
-            "background-image":
+            backgroundImage:
               "linear-gradient(180deg,transparent,rgba(0,0,0,.7))",
           }}
         ></div>

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 import { useNavigate } from "react-router-dom";
+import { addToHistory } from "../../redux/action/blogAction";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,11 @@ const Home = () => {
   };
 
   const navigate = useNavigate();
+
+  const handleClick = (blog) => {
+    navigate(`/blog/${blog._id}`);
+    dispatch(addToHistory(blog));
+  };
 
   useEffect(() => {
     dispatch(loadBlogData());
@@ -76,7 +82,7 @@ const Home = () => {
               </h1>
               <div
                 class="flex items-center flex-wrap cursor-pointer"
-                onClick={() => navigate(`/blog/${blog._id}`)}
+                onClick={() => handleClick(blog)}
               >
                 <p class="text-green-800  md:mb-2 lg:mb-0">
                   <p class="inline-flex items-center">

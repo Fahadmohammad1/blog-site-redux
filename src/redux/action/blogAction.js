@@ -1,5 +1,6 @@
 import {
   ADD_CONTENT,
+  ADD_TO_HISTORY,
   DELETE_CONTENT,
   GET_CONTENT,
   UPDATE_CONTENT,
@@ -27,6 +28,12 @@ export const removeBlog = (id) => {
 export const editBlog = (blog) => {
   return {
     type: UPDATE_CONTENT,
+    payload: blog,
+  };
+};
+export const addToHistory = (blog) => {
+  return {
+    type: ADD_TO_HISTORY,
     payload: blog,
   };
 };

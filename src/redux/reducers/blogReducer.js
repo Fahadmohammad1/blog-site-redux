@@ -36,7 +36,7 @@ const blogReducer = (state = initialState, action) => {
     case ADD_TO_HISTORY:
       return {
         ...state,
-        history: [state.history, action.payload],
+        history: [...state.history, action.payload],
       };
 
     default:
