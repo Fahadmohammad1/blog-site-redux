@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { FaEdit } from "react-icons/fa";
-
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 import deleteBlog from "../../redux/thunk/blogs/deleteBlog";

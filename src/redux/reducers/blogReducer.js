@@ -12,6 +12,9 @@ const initialState = {
 };
 
 const blogReducer = (state = initialState, action) => {
+  const selectedBlog = state.history.find(
+    (blog) => blog._id === action.payload._id
+  );
   switch (action.type) {
     case GET_CONTENT:
       return {
@@ -34,6 +37,14 @@ const blogReducer = (state = initialState, action) => {
         blogs: Object.assign(state.blogs, action.payload),
       };
     case ADD_TO_HISTORY:
+      // if (selectedBlog) {
+      //   const newBlogs = state.history.filter(
+      //     (blog) => blog._id !== selectedBlog._id
+      //   );
+      //   return {
+      //     history: [...newBlogs, selectedBlog],
+      //   };
+      // }
       return {
         ...state,
         history: [...state.history, action.payload],

@@ -8,6 +8,7 @@ const Blog = () => {
   const blogs = useSelector((state) => state?.blogs);
 
   const blog = blogs?.find((blog) => blog._id === id);
+  console.log(blog);
 
   const { authorName, image, date, time, title, description } = blog;
 
@@ -46,7 +47,9 @@ const Blog = () => {
               alt=""
             />
             <div>
-              <p class="font-semibold text-gray-200 text-sm">{authorName}</p>
+              <p class="font-semibold text-gray-200 text-sm">
+                {authorName !== "undefined" ? authorName : "No Name"}
+              </p>
               <p class="font-semibold text-gray-400 text-xs">
                 {date} - {time}
               </p>
