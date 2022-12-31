@@ -43,7 +43,7 @@ const blogReducer = (state = initialState, action) => {
         );
         return {
           ...state,
-          history: [...newBlogs, selectedBlog],
+          history: [selectedBlog, ...newBlogs],
         };
       }
       return {
