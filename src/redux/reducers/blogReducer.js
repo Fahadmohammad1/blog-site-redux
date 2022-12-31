@@ -48,7 +48,7 @@ const blogReducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        history: [...state.history, action.payload],
+        history: [action.payload, ...state.history],
       };
 
     default:
