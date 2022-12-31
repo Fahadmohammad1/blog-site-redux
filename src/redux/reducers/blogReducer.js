@@ -37,14 +37,15 @@ const blogReducer = (state = initialState, action) => {
         blogs: Object.assign(state.blogs, action.payload),
       };
     case ADD_TO_HISTORY:
-      // if (selectedBlog) {
-      //   const newBlogs = state.history.filter(
-      //     (blog) => blog._id !== selectedBlog._id
-      //   );
-      //   return {
-      //     history: [...newBlogs, selectedBlog],
-      //   };
-      // }
+      if (selectedBlog) {
+        const newBlogs = state.history.filter(
+          (blog) => blog._id !== selectedBlog._id
+        );
+        return {
+          ...state,
+          history: [...newBlogs, selectedBlog],
+        };
+      }
       return {
         ...state,
         history: [...state.history, action.payload],
