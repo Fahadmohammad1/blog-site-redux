@@ -5,10 +5,9 @@ import { useParams } from "react-router-dom";
 const Blog = () => {
   const { id } = useParams();
 
-  const blogs = useSelector((state) => state?.blogs);
+  const blogs = useSelector((state) => state?.blog?.blogs);
 
   const blog = blogs?.find((blog) => blog._id === id);
-  console.log(blog);
 
   const { authorName, image, date, time, title, description } = blog;
 

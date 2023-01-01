@@ -9,7 +9,7 @@ import { addToHistory, filterBlog } from "../../redux/action/blogAction";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const blogs = useSelector((state) => state?.blogs);
+  const blogs = useSelector((state) => state?.blog?.blogs);
 
   const deleteBlogByUser = (id) => {
     alert("Are you sure?");

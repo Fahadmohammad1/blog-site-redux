@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const AllBlog = () => {
   const dispatch = useDispatch();
-  const blogs = useSelector((state) => state?.blogs);
+  const blogs = useSelector((state) => state?.blog?.blogs);
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(loadBlogData());

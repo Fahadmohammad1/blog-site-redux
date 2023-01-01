@@ -4,7 +4,7 @@ const initialState = {
   filters: [],
 };
 
-export const filterReducer = (state = initialState, action) => {
+const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_FILTER:
       return {
@@ -16,3 +16,5 @@ export const filterReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default filterReducer;

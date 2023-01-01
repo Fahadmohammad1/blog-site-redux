@@ -4,10 +4,9 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const History = () => {
-  const history = useSelector((state) => state.history);
+  const history = useSelector((state) => state?.blog?.history);
 
   const navigate = useNavigate();
-  console.log(history);
 
   return (
     <>
