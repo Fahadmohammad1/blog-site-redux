@@ -9,7 +9,7 @@ const filterReducer = (state = initialState, action) => {
     case TOGGLE_FILTER:
       return {
         ...state,
-        filters: [...state.filters, action.payload],
+        filters: [action.payload],
       };
 
     default:
