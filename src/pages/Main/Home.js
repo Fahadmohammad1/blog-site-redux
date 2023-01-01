@@ -10,9 +10,15 @@ const Home = () => {
 
   const filter = useSelector((state) => state.filter.filters);
 
+  const activeClass =
+    "shadow-lg bg-cyan-400 font-bold p-1 rounded-lg uppercase";
+
+  const first = filter.includes("first");
+  const last = filter.includes("last");
+
   useEffect(() => {
     dispatch(loadBlogData());
-  }, [dispatch]);
+  }, [dispatch, filter]);
 
   let content;
 
@@ -54,13 +60,21 @@ const Home = () => {
       <div className="container mx-auto flex px-4 pt-4 gap-2 justify-end">
         <button
           onClick={() => dispatch(filterBlog("last"))}
-          className="shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase"
+          className={
+            !last
+              ? "shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase"
+              : activeClass
+          }
         >
           sort by last upload
         </button>
         <button
           onClick={() => dispatch(filterBlog("first"))}
-          className="shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase"
+          className={
+            !first
+              ? "shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase"
+              : activeClass
+          }
         >
           sort by First upload
         </button>
