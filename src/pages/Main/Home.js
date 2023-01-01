@@ -20,21 +20,35 @@ const Home = () => {
     content = (
       <div className="container mx-auto md:grid grid-cols-2 gap-5">
         {blogs?.map((blog) => (
-          <BlogCard blog={blog} />
+          <BlogCard key={blog._id} blog={blog} />
         ))}
       </div>
     );
   }
 
-  // if (blogs.length && filter.includes("last")) {
-  //   <div className="container mx-auto md:grid grid-cols-2 gap-5">
-  //     {blogs
-  //       ?.sort((a, b) => new Date(a.date) - new Date(b.date))
-  //       .map((blog) => (
-  //         <blogCard></blogCard>
-  //       ))}
-  //   </div>;
-  // }
+  if (blogs.length && filter.includes("last")) {
+    content = (
+      <div className="container mx-auto md:grid grid-cols-2 gap-5">
+        {blogs
+          ?.sort((a, b) => new Date(b.date) - new Date(a.date))
+          .map((blog) => (
+            <BlogCard key={blog._id} blog={blog}></BlogCard>
+          ))}
+      </div>
+    );
+  }
+
+  if (blogs.length && filter.includes("first")) {
+    content = (
+      <div className="container mx-auto md:grid grid-cols-2 gap-5">
+        {blogs
+          ?.sort((a, b) => new Date(a.date) - new Date(b.date))
+          .map((blog) => (
+            <BlogCard key={blog._id} blog={blog}></BlogCard>
+          ))}
+      </div>
+    );
+  }
   return (
     <div>
       <div className="container mx-auto flex px-4 pt-4 gap-2 justify-end">
