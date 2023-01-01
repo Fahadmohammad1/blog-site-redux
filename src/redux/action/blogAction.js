@@ -3,6 +3,7 @@ import {
   ADD_TO_HISTORY,
   DELETE_CONTENT,
   GET_CONTENT,
+  TOGGLE_FILTER,
   UPDATE_CONTENT,
 } from "../actionTypes/actionType";
 
@@ -35,5 +36,12 @@ export const addToHistory = (blog) => {
   return {
     type: ADD_TO_HISTORY,
     payload: blog,
+  };
+};
+
+export const filterBlog = (filter) => {
+  return {
+    type: TOGGLE_FILTER,
+    payload: filter,
   };
 };

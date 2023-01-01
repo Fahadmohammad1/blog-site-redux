@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 import deleteBlog from "../../redux/thunk/blogs/deleteBlog";
 import { useNavigate } from "react-router-dom";
-import { addToHistory } from "../../redux/action/blogAction";
+import { addToHistory, filterBlog } from "../../redux/action/blogAction";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -31,10 +31,16 @@ const Home = () => {
   return (
     <div>
       <div className="container mx-auto flex px-4 pt-4 gap-2 justify-end">
-        <button className="shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase">
+        <button
+          onClick={() => dispatch(filterBlog("last"))}
+          className="shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase"
+        >
           sort by last upload
         </button>
-        <button className="shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase">
+        <button
+          onClick={() => dispatch(filterBlog("first"))}
+          className="shadow-lg bg-gray-300 font-bold p-1 rounded-lg uppercase"
+        >
           sort by First upload
         </button>
       </div>
