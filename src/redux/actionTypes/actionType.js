@@ -6,3 +6,4 @@ export const ADD_TO_HISTORY = "ADD_TO_HISTORY";
 
 // for filters
 export const TOGGLE_FILTER = "TOGGLE_FILTER";
+export const FILTER_BY_TAG = "FILTER_TAG";

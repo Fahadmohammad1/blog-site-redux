@@ -2,6 +2,7 @@ import {
   ADD_CONTENT,
   ADD_TO_HISTORY,
   DELETE_CONTENT,
+  FILTER_BY_TAG,
   GET_CONTENT,
   TOGGLE_FILTER,
   UPDATE_CONTENT,
@@ -43,5 +44,12 @@ export const filterBlog = (filter) => {
   return {
     type: TOGGLE_FILTER,
     payload: filter,
+  };
+};
+
+export const filterByTag = (tag) => {
+  return {
+    type: FILTER_BY_TAG,
+    payload: tag,
   };
 };

@@ -2,6 +2,7 @@ import { TOGGLE_FILTER } from "../actionTypes/actionType";
 
 const initialState = {
   filters: [],
+  tags: [],
 };
 
 const filterReducer = (state = initialState, action) => {
