@@ -81,11 +81,11 @@ const BlogCard = ({ blog }) => {
             class="flex items-center flex-wrap cursor-pointer"
             onClick={() => handleClick(blog)}
           >
-            <p class="text-green-800  md:mb-2 lg:mb-0">
+            <div class="text-green-800  md:mb-2 lg:mb-0">
               <p class="inline-flex items-center">
                 {blog.description.slice(0, 150)}...
               </p>
-            </p>
+            </div>
           </div>
         </div>
       </div>

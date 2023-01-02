@@ -59,14 +59,8 @@ const Home = () => {
   }
 
   if (blogs.length && tags.length) {
-    content = blogs
-      .filter((blog) => {
-        if (tags.length) {
-          return tags.includes(blog.tags);
-        }
-        return blogs;
-      })
-      .map((blog) => <BlogCard key={blog._id} blog={blog} />);
+    const newBlogs = blogs.find((blog) => blog.tags.includes(tags));
+    console.log(newBlogs);
   }
   return (
     <div>
