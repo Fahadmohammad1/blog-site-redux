@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch } from "react-redux";
+import { Multiselect } from "multiselect-react-dropdown";
 import postBlogData from "../../redux/thunk/blogs/postBlog";
 
 const AddBlog = () => {
@@ -8,14 +9,21 @@ const AddBlog = () => {
   const time = new Date().toLocaleTimeString();
   const dispatch = useDispatch();
 
-  const { register, setValue, handleSubmit, reset, control } = useForm();
+  const { register, handleSubmit, reset, control } = useForm();
 
   const onSubmit = (blog) => {
     reset();
-
-    console.log(blog);
-    // dispatch(postBlogData(blog));
+    dispatch(postBlogData(blog));
   };
+
+  const tags = [
+    "Javascript",
+    "Phython",
+    "Programming",
+    "Web Development",
+    "Windows",
+    "Operating System",
+  ];
 
   return (
     <div>
@@ -82,49 +90,20 @@ const AddBlog = () => {
                 Tags (you can add multiple)
               </label>
               <Controller
-                as={
-                  <select
-                    multiple
-                    // {...register("tags")}
-                    className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    name="tags"
-                    id="tags"
-                    required
-                  >
-                    <option
-                      className="bg-gray-300 font-medium p-1 mb-2 rounded-md text-black"
-                      value="programming"
-                    >
-                      Programming
-                    </option>
-                    <option
-                      className="bg-gray-300 font-medium p-1 mb-2 rounded-md text-black"
-                      value="web development"
-                    >
-                      Web Development
-                    </option>
-                    <option
-                      className="bg-gray-300 font-medium p-1 mb-2 rounded-md text-black"
-                      value="windows"
-                    >
-                      Windows
-                    </option>
-                    <option
-                      className="bg-gray-300 font-medium p-1 mb-2 rounded-md text-black"
-                      value="operating system"
-                    >
-                      Operating System
-                    </option>
-                    <option
-                      className="bg-gray-300 font-medium p-1 mb-2 rounded-md text-black"
-                      value="javascript"
-                    >
-                      Javascript
-                    </option>
-                  </select>
-                }
                 control={control}
                 name="tags"
+                render={({ field: { value, onChange } }) => (
+                  <Multiselect
+                    className="w-full rounded-md border border-[#e0e0e0] bg-white py-2 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    options={tags}
+                    isObject={false}
+                    showCheckbox={true}
+                    closeOnSelect={false}
+                    onSelect={onChange}
+                    onRemove={onChange}
+                    selectedValues={value}
+                  />
+                )}
               />
             </div>
             <div class="mb-4">
