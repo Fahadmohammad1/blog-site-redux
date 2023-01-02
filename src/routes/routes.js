@@ -44,7 +44,7 @@ const routes = createBrowserRouter([
             element: <AllBlog />,
           },
           {
-            path: "/dashboard/add-blog",
+            path: "/dashboard/addBlog",
             element: <AddBlog />,
           },
         ],

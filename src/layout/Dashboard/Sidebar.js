@@ -10,7 +10,7 @@ const Sidebar = () => {
           <Link to="/dashboard">All Blog</Link>
         </li>
         <li className="border-2 text-center rounded">
-          <Link to="add-blog">Add Blog</Link>
+          <Link to="addBlog">Add Blog</Link>
         </li>
       </ul>
     </div>
