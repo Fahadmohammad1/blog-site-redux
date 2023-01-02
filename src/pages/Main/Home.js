@@ -32,7 +32,7 @@ const Home = () => {
     );
   }
 
-  if (blogs.length && filter.includes("last")) {
+  if (blogs.length && filter.length && filter.includes("last")) {
     content = (
       <div className="container mx-auto md:grid grid-cols-2 gap-5">
         {blogs

@@ -2,13 +2,14 @@ import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { addToHistory } from "../redux/action/blogAction";
 import deleteBlog from "../redux/thunk/blogs/deleteBlog";
 
 const BlogCard = ({ blog }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleClick = (blog) => {
     navigate(`/blog/${blog._id}`);
@@ -40,18 +41,20 @@ const BlogCard = ({ blog }) => {
                 {blog.date} - {blog.time}
               </p>
             </div>
-            <div className="ml-auto flex items-center">
-              <FaEdit
-                onClick={() => navigate(`/edit-blog/${blog._id}`)}
-                title="Edit"
-                className="text-2xl text-cyan-500 cursor-pointer"
-              />
-              <RiDeleteBin5Fill
-                onClick={() => deleteBlogByUser(blog._id)}
-                title="Delete"
-                className="text-2xl ml-2 text-red-600 cursor-pointer"
-              />
-            </div>
+            {pathname === "/" && (
+              <div className="ml-auto flex items-center">
+                <FaEdit
+                  onClick={() => navigate(`/edit-blog/${blog._id}`)}
+                  title="Edit"
+                  className="text-2xl text-cyan-500 cursor-pointer"
+                />
+                <RiDeleteBin5Fill
+                  onClick={() => deleteBlogByUser(blog._id)}
+                  title="Delete"
+                  className="text-2xl ml-2 text-red-600 cursor-pointer"
+                />
+              </div>
+            )}
           </div>
         </div>
         <img
