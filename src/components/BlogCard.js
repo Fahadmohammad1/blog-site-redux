@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { addToHistory } from "../redux/action/blogAction";
+import { addToHistory, filterByTag } from "../redux/action/blogAction";
 import deleteBlog from "../redux/thunk/blogs/deleteBlog";
 
 const BlogCard = ({ blog }) => {
@@ -66,7 +66,10 @@ const BlogCard = ({ blog }) => {
         <div class="p-4">
           <div className="mb-1">
             {blog?.tags?.map((tag) => (
-              <button class="bg-gray-200 tracking-widest text-xs font-medium text-violet-500  mr-2 uppercase rounded-full shadow-xl p-1.5 hover:bg-teal-300 hover:text-black">
+              <button
+                onClick={() => dispatch(filterByTag(tag))}
+                class="bg-gray-200 tracking-widest text-xs font-medium text-violet-500  mr-2 uppercase rounded-full shadow-xl p-1.5 hover:bg-teal-300 hover:text-black"
+              >
                 {tag}
               </button>
             ))}

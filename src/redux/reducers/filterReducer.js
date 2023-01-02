@@ -1,4 +1,4 @@
-import { TOGGLE_FILTER } from "../actionTypes/actionType";
+import { FILTER_BY_TAG, TOGGLE_FILTER } from "../actionTypes/actionType";
 
 const initialState = {
   filters: [],
@@ -21,6 +21,18 @@ const filterReducer = (state = initialState, action) => {
         ...state,
         filters: [action.payload],
       };
+    case FILTER_BY_TAG:
+      if (!state.tags.includes(action.payload)) {
+        return {
+          ...state,
+          tags: [...state.tags, action.payload],
+        };
+      } else {
+        return {
+          ...state,
+          tags: state.tags.filter((tag) => tag !== action.payload),
+        };
+      }
 
     default:
       return state;

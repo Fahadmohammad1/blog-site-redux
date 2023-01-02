@@ -9,6 +9,8 @@ const Home = () => {
   const blogs = useSelector((state) => state?.blog?.blogs);
 
   const filter = useSelector((state) => state.filter.filters);
+  const tags = useSelector((state) => state.filter.tags);
+  console.log(tags);
 
   const activeClass =
     "shadow-lg bg-cyan-400 font-bold p-1 rounded-lg uppercase";
@@ -54,6 +56,17 @@ const Home = () => {
           ))}
       </div>
     );
+  }
+
+  if (blogs.length && tags.length) {
+    content = blogs
+      .filter((blog) => {
+        if (tags.length) {
+          return tags.includes(blog.tags);
+        }
+        return blogs;
+      })
+      .map((blog) => <BlogCard key={blog._id} blog={blog} />);
   }
   return (
     <div>
