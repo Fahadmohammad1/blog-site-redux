@@ -58,10 +58,6 @@ const Home = () => {
     );
   }
 
-  if (blogs.length && tags.length) {
-    const newBlogs = blogs.find((blog) => blog.tags.includes(tags));
-    console.log(newBlogs);
-  }
   return (
     <div>
       <div className="container mx-auto flex px-4 pt-4 gap-2 justify-end">
