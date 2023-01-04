@@ -25,7 +25,7 @@ const Home = () => {
     for (const tag of tags) {
       setTag(tag);
     }
-  }, [dispatch, filter, tags]);
+  }, [dispatch, tags, filter]);
 
   let content;
 
@@ -63,8 +63,15 @@ const Home = () => {
     );
   }
 
-  if (blogs.length || tags.length) {
+  if (blogs.length && tags.length) {
     const newBlogs = blogs.filter((blog) => blog.tags.includes(tag));
+    content = (
+      <div className="container mx-auto md:grid grid-cols-2 gap-5">
+        {newBlogs.map((blog) => (
+          <BlogCard key={blog._id} blog={blog} />
+        ))}
+      </div>
+    );
   }
 
   return (
