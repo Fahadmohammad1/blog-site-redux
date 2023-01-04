@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import loadBlogData from "../../redux/thunk/blogs/fetchBlogs";
 import { filterBlog } from "../../redux/action/blogAction";
 import BlogCard from "../../components/BlogCard";
 
 const Home = () => {
+  const [tag, setTag] = useState("");
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state?.blog?.blogs);
+  // blogs.map((blog) => console.log(blog.tags));
 
   const filter = useSelector((state) => state.filter.filters);
   const tags = useSelector((state) => state.filter.tags);
@@ -20,7 +22,10 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(loadBlogData());
-  }, [dispatch, filter]);
+    for (const tag of tags) {
+      setTag(tag);
+    }
+  }, [dispatch, filter, tags]);
 
   let content;
 
@@ -56,6 +61,10 @@ const Home = () => {
           ))}
       </div>
     );
+  }
+
+  if (blogs.length || tags.length) {
+    const newBlogs = blogs.filter((blog) => blog.tags.includes(tag));
   }
 
   return (
