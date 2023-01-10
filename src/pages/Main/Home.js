@@ -8,11 +8,9 @@ const Home = () => {
   const [tag, setTag] = useState("");
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state?.blog?.blogs);
-  // blogs.map((blog) => console.log(blog.tags));
 
   const filter = useSelector((state) => state.filter.filters);
   const tags = useSelector((state) => state.filter.tags);
-  console.log(tags);
 
   const activeClass =
     "shadow-lg bg-cyan-400 font-bold p-1 rounded-lg uppercase";
